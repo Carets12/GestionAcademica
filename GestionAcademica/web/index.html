@@ -67,6 +67,8 @@
                 Vista inicial de la aplicación
             </div>
             <!-- ALUMNADO -->
+            
+            
             <div id="panel_al_alu" class="panel" hidden>
                 <h3>Create Alumno</h3>
                 <div class="input">
@@ -83,9 +85,13 @@
                     </form>
                 </div>
             </div>
+            
+            
             <div id="panel_li_alu" class="panel" hidden>
                 Listado de alumnos y gestión de modificaciones/borrado
             </div>
+            
+            
             <div id="panel_mo_alu" class="panel" hidden>
                 <h3>Update Alumno</h3>
                 <div class="input">
@@ -105,22 +111,69 @@
                     </form>
                 </div>
             </div>
+            
+            
             <div id="panel_bo_alu" class="panel" hidden>
                 Formulario para borrar un alumno
             </div>
+            
+            
             <!-- PROFESORADO -->
-            <div id="panel_al_pro" class="panel" hidden>
-                Alta de un profesor
+            
+            
+                
+          <div id="panel_al_pro" class="panel" hidden>
+                <h3>Create Profesor</h3>
+                <div class="input">
+                    <form>
+                        <div class="input">
+                            <input type="text" id="c_pr_nombre" class="input-field" placeholder="Nombre del Profesor" >
+                        </div>
+                        <div class="input">
+                            <input type="text" id="c_pr_apellidos" class="input-field" placeholder="Apellidos del Profesor"  >
+                        </div>
+                        <div class="input">
+                            <div class="btn" onclick="$.profesor.ProfesorCreateREST()">Enviar!</div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div id="panel_li_pro" class="panel" hidden>
-                Listado de profesores y gestión de modificaciones/borrado
+   
+                
+                         
+            <div id="panel_li_pro" class="panel" hidden>               
+                   Listado de profesores y gestión de modificaciones/borrado
             </div>
-            <div id="panel_mo_pro" class="panel" hidden>
-                Formulario para editar un profesor
+        
+                 
+            <div id="panel_mo_pro" class="panel" hidden>                      
+                <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->                  
+                <h3>Update Profesor</h3>
+                <div class="input">
+                    <form>
+                        <div class="input">
+                            <input type="hidden" id="u_pr_id" class="input-field">
+                        </div> 
+                        <div class="input">
+                            <input type="text" id="u_pr_nombre" class="input-field" placeholder="Nombre del Profesor" >
+                        </div>
+                        <div class="input">
+                            <input type="text" id="u_pr_apellidos" class="input-field" placeholder="Apellidos del Profesor"  >
+                        </div>
+                        <div class="input">
+                            <div class="btn" onclick="$.profesor.ProfesorUpdateREST(1,1)">Enviar!</div>
+                        </div>
+                    </form>
+                  </div>
+                    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->  
             </div>
+           
             <div id="panel_bo_pro" class="panel" hidden>
+                <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->                         
                 Formulario para borrar un profesor
             </div>
+                 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->  
+         
             <!-- GESTION ASIGNATURAS -->
 
             <div id="panel_al_asig" class="panel" hidden>
@@ -153,8 +206,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
-            
+            </div>          
 
             <div id="panel_ayuda" class="panel" hidden>
                 Caja para la gestión de errores (mostrar errores y/o avisos)
