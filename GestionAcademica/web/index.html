@@ -37,9 +37,9 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="#!" id="menu_al_pro">Alta</a></li>
-                                <li><a href="#!" id="menu_mo_pro">Modificación</a></li>
-                                <li><a href="#!" id="menu_li_pro">Listado</a></li>
-                                <li><a href="#!" id="menu_bo_pro">Borrado</a></li>
+                                <li><a href="#!" id="menu_mo_pro" onclick="$.profesor.ProfesorUpdateREST();">Modificación</a></li>
+                                <li><a href="#!" id="menu_li_pro" onclick="$.profesor.ProfesorReadREST();">Listado</a></li>
+                                <li><a href="#!" id="menu_bo_pro" onclick="$.profesor.ProfesorDeleteREST();">Borrado</a></li>
                             </ul>
                         </div>
                     </li>
@@ -48,9 +48,9 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="#!" id="menu_al_asig">Alta</a></li>
-                                <li><a href="#!" id="menu_pro_asig">Asignación profesor/asignatura</a></li>
-                                <li><a href="#!" id="menu_alu_asig">Matriculaciones alumnos</a></li>
-                                <li><a href="#!" id="menu_bor_asig">Borrado asignaturas</a></li>
+                                <li><a href="#!" id="menu_pro_asig" onclick="$.asignatura.AsignaturaUpdateREST();" >Asignación profesor/asignatura</a></li>
+                                <li><a href="#!" id="menu_alu_asig" onclick="$.asignatura.AsignaturaReadREST();">Matriculaciones alumnos</a></li>
+                                <li><a href="#!" id="menu_bor_asig" onclick="$.asignatura.AsignaturaDeleteREST();">Borrado asignaturas</a></li>
                             </ul>
                         </div>
                     </li>
@@ -66,9 +66,8 @@
             <div id="panel_main" class="panel" hidden>
                 Vista inicial de la aplicación
             </div>
-            <!-- ALUMNADO -->
             
-            
+           <!-- ALUMNADO -->                        
             <div id="panel_al_alu" class="panel" hidden>
                 <h3>Create Alumno</h3>
                 <div class="input">
@@ -85,12 +84,10 @@
                     </form>
                 </div>
             </div>
-            
-            
+                       
             <div id="panel_li_alu" class="panel" hidden>
                 Listado de alumnos y gestión de modificaciones/borrado
             </div>
-            
             
             <div id="panel_mo_alu" class="panel" hidden>
                 <h3>Update Alumno</h3>
@@ -111,17 +108,12 @@
                     </form>
                 </div>
             </div>
-            
-            
+                       
             <div id="panel_bo_alu" class="panel" hidden>
                 Formulario para borrar un alumno
             </div>
-            
-            
-            <!-- PROFESORADO -->
-            
-            
-                
+                        
+            <!-- PROFESORADO -->            
           <div id="panel_al_pro" class="panel" hidden>
                 <h3>Create Profesor</h3>
                 <div class="input">
@@ -138,16 +130,12 @@
                     </form>
                 </div>
             </div>
-   
-                
-                         
+                                            
             <div id="panel_li_pro" class="panel" hidden>               
                    Listado de profesores y gestión de modificaciones/borrado
             </div>
-        
-                 
-            <div id="panel_mo_pro" class="panel" hidden>                      
-                <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->                  
+                         
+            <div id="panel_mo_pro" class="panel" hidden>                                                
                 <h3>Update Profesor</h3>
                 <div class="input">
                     <form>
@@ -165,14 +153,12 @@
                         </div>
                     </form>
                   </div>
-                    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->  
+                    
             </div>
            
-            <div id="panel_bo_pro" class="panel" hidden>
-                <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->                         
+            <div id="panel_bo_pro" class="panel" hidden>                   
                 Formulario para borrar un profesor
-            </div>
-                 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->  
+            </div>               
          
             <!-- GESTION ASIGNATURAS -->
 
