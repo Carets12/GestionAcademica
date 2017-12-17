@@ -6,6 +6,7 @@
 package com.iesvdc.acceso.dao;
 
 import com.iesvdc.acceso.pojo.Alumno;
+import com.iesvdc.acceso.pojo.Profesor;
 import java.util.List;
 
 /**
