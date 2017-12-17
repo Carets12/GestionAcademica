@@ -7,6 +7,8 @@ package com.iesvdc.acceso.controller;
 
 import com.iesvdc.acceso.dao.AlumnoDAOImpl;
 import com.iesvdc.acceso.dao.DAOException;
+import com.iesvdc.acceso.dao.ProfesorDAO;
+import com.iesvdc.acceso.dao.ProfesorDAOImpl;
 import com.iesvdc.acceso.pojo.Profesor;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -74,7 +76,7 @@ public class CrearProfesor extends HttpServlet {
 
             pr = new Profesor(nombre,apellido);
         
-            pr_dao = new AlumnoDAOImpl();
+            pr_dao = new ProfesorDAOImpl();
 
             try {
                 pr_dao.create(pr);

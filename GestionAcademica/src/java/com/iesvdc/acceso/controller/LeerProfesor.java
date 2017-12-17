@@ -6,6 +6,8 @@
 package com.iesvdc.acceso.controller;
 
 import com.iesvdc.acceso.dao.DAOException;
+import com.iesvdc.acceso.dao.ProfesorDAO;
+import com.iesvdc.acceso.dao.ProfesorDAOImpl;
 import com.iesvdc.acceso.pojo.Profesor;
 import java.io.IOException;
 import java.io.PrintWriter;
