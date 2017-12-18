@@ -73,5 +73,4 @@ public class Asignatura {
     public String toString() {
         return "Asignatura{" + "nombre=" + nombre + ", id=" + id + ", curso=" + curso + ", ciclo=" + ciclo + '}';
     }
-
 }

@@ -5,10 +5,18 @@
  */
 package com.iesvdc.acceso.pojo;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author profesor
  */
+
+@XmlRootElement(name = "aluasi")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class AluAsi {
 
     /*  ASIGNATURA INT,
@@ -17,9 +25,13 @@ public class AluAsi {
 	PRIMARY KEY(ASIGNATURA,ALUMNO),
 	FOREIGN KEY (ALUMNO) REFERENCES ALUMNO(id) ,
 	FOREIGN KEY (ASIGNATURA) REFERENCES ASIGNATURA(id) );*/
-    private int asignatura;
-    private int alumno;
-    private int faltas;
+    
+    @XmlElement
+    private Integer asignatura;
+    @XmlElement
+    private Integer alumno;
+    @XmlElement
+    private Integer faltas;
 
     public AluAsi() {
 
