@@ -28,7 +28,7 @@ public class Asignatura {
     String ciclo;
 
     public Asignatura() {
-    }
+    }        
 
     public Asignatura(String nombre, int id, int curso, String ciclo) {
         this.nombre = nombre;
