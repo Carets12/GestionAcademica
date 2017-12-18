@@ -108,33 +108,52 @@
             <div id="panel_bo_alu" class="panel" hidden>
                 Formulario para borrar un alumno
             </div>
-            <!-- PROFESORADO -->
-            <div id="panel_al_pro" class="panel" hidden>
-                Alta de un profesor
+                        <!-- PROFESORADO -->            
+          <div id="panel_al_pro" class="panel" hidden>
+                <h3>Create Profesor</h3>
+                <div class="input">
+                    <form>
+                        <div class="input">
+                            <input type="text" id="c_pr_nombre" class="input-field" placeholder="Nombre del Profesor" >
+                        </div>
+                        <div class="input">
+                            <input type="text" id="c_pr_apellidos" class="input-field" placeholder="Apellidos del Profesor"  >
+                        </div>
+                        <div class="input">
+                            <div class="btn" onclick="$.profesor.ProfesorCreateREST()">Enviar!</div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div id="panel_li_pro" class="panel" hidden>
-                Listado de profesores y gestión de modificaciones/borrado
+                                            
+            <div id="panel_li_pro" class="panel" hidden>               
+                   Listado de profesores y gestión de modificaciones/borrado
             </div>
-            <div id="panel_mo_pro" class="panel" hidden>
-                Formulario para editar un profesor
+                         
+            <div id="panel_mo_pro" class="panel" hidden>                                                
+                <h3>Update Profesor</h3>
+                <div class="input">
+                    <form>
+                        <div class="input">
+                            <input type="hidden" id="u_pr_id" class="input-field">
+                        </div> 
+                        <div class="input">
+                            <input type="text" id="u_pr_nombre" class="input-field" placeholder="Nombre del Profesor" >
+                        </div>
+                        <div class="input">
+                            <input type="text" id="u_pr_apellidos" class="input-field" placeholder="Apellidos del Profesor"  >
+                        </div>
+                        <div class="input">
+                            <div class="btn" onclick="$.profesor.ProfesorUpdateREST(1,1)">Enviar!</div>
+                        </div>
+                    </form>
+                  </div>
+                    
             </div>
-            <div id="panel_bo_pro" class="panel" hidden>
+           
+            <div id="panel_bo_pro" class="panel" hidden>                   
                 Formulario para borrar un profesor
-            </div>
-            <!-- GESTION ASIGNATURAS -->
-
-            <div id="panel_al_asig" class="panel" hidden>
-                Formulario para añadir/editar una asignatura
-            </div>
-            <div id="panel_pro_asig" class="panel" hidden>
-                Maestro/detalle asignaturas/profesor
-            </div>
-            <div id="panel__alu_asig" class="panel" hidden>
-                Maestro/detalle asignaturas/alumno
-            </div>
-            <div id="panel_bor_asig" class="panel" hidden>
-                Listado de asignaturas y gestión de modificaciones/borrado
-            </div>
+            </div> 
             
             <!-- Gestión usuario / Login  -->
             <div id="panel_login" class="panel" hidden>
