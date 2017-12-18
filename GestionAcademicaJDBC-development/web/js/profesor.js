@@ -10,12 +10,12 @@
 // variables para el jslint
 
 /**
- * Creamos el objeto alumno y todos sus métodos.
+ * Creamos el objeto profesor y todos sus métodos.
  */
 $.profesor = {};
 // Configuración del HOST y URL del servicio
 $.profesor.HOST = 'http://localhost:8080';
-// $.alumno.URL = '/GA-JPA/webresources/com.iesvdc.acceso.entidades.alumno';
+// $.profesor.URL = '/GA-JPA/webresources/com.iesvdc.acceso.entidades.profesor';
 $.profesor.URL = '/GestionAcademica/rest/profesor';
 
 $.profesor.panel_alta = '#panel_al_pro';
@@ -25,7 +25,7 @@ $.profesor.panel_borr = '#panel_bo_pro';
 $.profesor.panel_erro = '#panel_error';
 
 /**
- Esta función hace la llamada REST al servidor y crea la tabla con todos los alumnos.
+ Esta función hace la llamada REST al servidor y crea la tabla con todos los profesors.
  */
 $.profesor.ProfesorReadREST = function () {
     // con esta función jQuery hacemos la petición GET que hace el findAll()
@@ -62,8 +62,8 @@ $.profesor.ProfesorCreateREST = function () {
     // comprobamos que en el formulario haya datos...
     if (datos.nombre.length > 2 && datos.apellido.length > 2) {
         // doPost(target, datos, fn_exito)
-        $.controller.doPost(
-            $.profedor.HOST + $.profesor.URL,
+        $.controller.doPostProfesor(
+            $.profesor.HOST + $.profesor.URL,
             datos,
             function () {
                 // probamos que se ha actualizado cargando de nuevo la lista -no es necesario-

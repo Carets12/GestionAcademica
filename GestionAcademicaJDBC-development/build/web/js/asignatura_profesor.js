@@ -17,7 +17,7 @@ $.asipr = {};
 // Configuración del HOST y URL del servicio
 $.prasi.HOST = 'http://localhost:8080';
 $.asipr.HOST = 'http://localhost:8080';
-// $.alumno.URL = '/GA-JPA/webresources/com.iesvdc.acceso.entidades.profesor';
+// $profesor.URL = '/GA-JPA/webresources/com.iesvdc.acceso.entidades.profesor';
 $.prasi.URL = '/GestionAcademica/rest/prasi';
 $.asipr.URL = '/GestionAcademica/rest/asipr';
 

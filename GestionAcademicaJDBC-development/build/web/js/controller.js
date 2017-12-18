@@ -140,6 +140,41 @@ $.controller.doPost = function(target, datos, fn_exito) {
         });
 };
 
+$.controller.doPostAsignatura = function(target, datos, fn_exito) {
+    $.ajax({
+            url: $.asignatura.HOST + $.asignatura.URL,
+            type: 'POST',
+            dataType: 'json',
+            contentType: "application/json",
+            data: JSON.stringify(datos),
+            beforeSend: function (xhr) {
+                $.controller.authorize(xhr);
+            },
+            success: fn_exito,
+            error: function (xhr, status) {
+                $.controller.errorManager(xhr.status);                
+            }
+        });
+};
+
+$.controller.doPostProfesor = function(target, datos, fn_exito) {
+    $.ajax({
+            url: $.profesor.HOST + $.profesor.URL,
+            type: 'POST',
+            dataType: 'json',
+            contentType: "application/json",
+            data: JSON.stringify(datos),
+            beforeSend: function (xhr) {
+                $.controller.authorize(xhr);
+            },
+            success: fn_exito,
+            error: function (xhr, status) {
+                $.controller.errorManager(xhr.status);                
+            }
+        });
+};
+
+
 /**
  * 
  * @param {type} target

@@ -10,12 +10,12 @@
 // variables para el jslint
 
 /**
- * Creamos el objeto alumno y todos sus métodos.
+ * Creamos el objeto asignatura y todos sus métodos.
  */
 $.asignatura = {};
 // Configuración del HOST y URL del servicio
 $.asignatura.HOST = 'http://localhost:8080';
-// $.alumno.URL = '/GA-JPA/webresources/com.iesvdc.acceso.entidades.alumno';
+// $.asignatura.URL = '/GA-JPA/webresources/com.iesvdc.acceso.entidades.asignatura';
 $.asignatura.URL = '/GestionAcademica/rest/asignatura';
 
 $.asignatura.panel_alta = '#panel_al_as';
@@ -25,7 +25,7 @@ $.asignatura.panel_borr = '#panel_bo_as';
 $.asignatura.panel_erro = '#panel_error';
 
 /**
- Esta función hace la llamada REST al servidor y crea la tabla con todos los alumnos.
+ Esta función hace la llamada REST al servidor y crea la tabla con todos los asignaturas.
  */
 $.asignatura.AsignaturaReadREST = function () {
     // con esta función jQuery hacemos la petición GET que hace el findAll()
@@ -64,7 +64,7 @@ $.asignatura.AsignaturaCreateREST = function () {
     // comprobamos que en el formulario haya datos...
     if (datos.nombre.length > 2) {
         // doPost(target, datos, fn_exito)
-        $.controller.doPost(
+        $.controller.doPostAsignatura(
             $.asignatura.HOST + $.asignatura.URL,
             datos,
             function () {
