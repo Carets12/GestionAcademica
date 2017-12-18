@@ -49,7 +49,7 @@ public class ProAsiDAOImpl implements ProAsiDAO{
             }
             con.close();
         } catch (SQLException ex) {
-            throw new DAOException("AluAsi:findAlumnosByAsignatura: No puedo conectar a la BBDD ");
+            throw new DAOException("AluPro:findProfesoresByAsignatura: No puedo conectar a la BBDD ");
         }
         return list_pr;
     }
