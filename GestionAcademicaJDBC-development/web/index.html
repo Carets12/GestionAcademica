@@ -58,10 +58,8 @@
                         <a class="collapsible-header">Asignaturas/Profesor<i class="material-icons"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="#!" id="menu_al_asig">Alta</a></li>
-                                <li><a href="#!" id="menu_pro_asig">Asignación profesor/asignatura</a></li>
-                                <li><a href="#!" id="menu_alu_asig">Matriculaciones alumnos</a></li>
-                                <li><a href="#!" id="menu_bor_asig">Borrado asignaturas</a></li>
+                                <li><a href="#!" id="menu_asi_pr" onclick="$.asipr.AsignaturaProfesorReadREST();">Leer Asignaturas</a></li>
+                                <li><a href="#!" id="menu_pr_asig" onclick="$.prasi.ProfesorAsignaturaReadREST();">Leer Profesores</a></li>
                             </ul>
                         </div>
                     </li>
@@ -69,8 +67,8 @@
                         <a class="collapsible-header">Asignaturas/Alumno<i class="material-icons"></i></a>
                         <div class="collapsible-body">
                             <ul>                          
-                                <li><a href="#!" id="menu_pro_asig">Leer Asignaturas</a></li>
-                                <li><a href="#!" id="menu_pro_asig">Leer Alumnos</a></li>
+                                <li><a href="#!" id="menu_pro_asig" onclick="$.asialu.AsignaturaAlumnoReadREST();">Leer Asignaturas</a></li>
+                                <li><a href="#!" id="menu_pro_asig" onclick="$.aluasi.AlumnoAsignaturaReadREST();">Leer Alumnos</a></li>
                             </ul>
                         </div>
                     </li>

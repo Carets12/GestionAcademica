@@ -10,50 +10,29 @@
 // variables para el jslint
 
 /**
- * Creamos el objeto alumno y todos sus métodos.
+ * Creamos el objeto profesor y todos sus métodos.
  */
-$.alupr = {};
-$.pralu = {};
+$.prasi = {};
+$.asipr = {};
 // Configuración del HOST y URL del servicio
-$.aluasi.HOST = 'http://localhost:8080';
-// $.alumno.URL = '/GA-JPA/webresources/com.iesvdc.acceso.entidades.alumno';
-$.aluasi.URL = '/GestionAcademica/rest/alupr';
-$.asialu.URL = '/GestionAcademica/rest/pralu';
+$.prasi.HOST = 'http://localhost:8080';
+$.asipr.HOST = 'http://localhost:8080';
+// $.alumno.URL = '/GA-JPA/webresources/com.iesvdc.acceso.entidades.profesor';
+$.prasi.URL = '/GestionAcademica/rest/prasi';
+$.asipr.URL = '/GestionAcademica/rest/asipr';
 
 $.asipr.panel_list = '#panel_li_asi_pr';
 $.prasi.panel_list_2= '#panel_li_pr_asi';
-$.aluasi.panel_erro = '#panel_error';
-$.asialu.panel_erro = '#panel_error';
+$.prasi.panel_erro = '#panel_error';
+$.asipr.panel_erro = '#panel_error';
 
 $.prasi.ProfesorAsignaturaReadREST = function () {
     // con esta función jQuery hacemos la petición GET que hace el findAll()
     $.controller.doGet(
             this.HOST + this.URL,
             function (json) {
-                $($.prasi.panel_list).empty();
-                $($.prasi.panel_list).append('<h3>Listado de Profesores</h3>');
-                var table = $('<table />').addClass('table table-stripped');
-
-                table.append($('<thead />').append($('<tr />').append('<th>id</th>', '<th>nombre</th>', '<th>id</th>', '<th>curso</th>', '<th>ciclo</th>')));
-                var tbody = $('<tbody />');
-                for (var clave in json) {
-                    tbody.append($('<tr />').append('<td>' + json[clave].nombre + '</td>',
-                            '<td>' + json[clave].id + '</td>', '<td>' + json[clave].curso + '</td>', '<td>' + json[clave].ciclo + '</td>'));
-                }
-                table.append(tbody);
-
-                $($.prasi.panel_list).append($('<div />').append(table));
-                $('tr:odd').css('background', '#CCCCCC');
-            });
-};
-
-$.asipr.AsignaturaProfesorReadREST = function () {
-    // con esta función jQuery hacemos la petición GET que hace el findAll()
-    $.controller.doGet(
-            this.HOST + this.URL,
-            function (json) {
-                $($.asipr.panel_list_2).empty();
-                $($.asipr.panel_list_2).append('<h3>Listado de Asignaturas</h3>');
+                $($.prasi.panel_list_2).empty();
+                $($.prasi.panel_list_2).append('<h3>Listado de Profesores</h3>');
                 var table = $('<table />').addClass('table table-stripped');
 
                 table.append($('<thead />').append($('<tr />').append('<th>id</th>', '<th>nombre</th>', '<th>apellido</th>')));
@@ -64,23 +43,50 @@ $.asipr.AsignaturaProfesorReadREST = function () {
                 }
                 table.append(tbody);
 
-                $($.asipr.panel_list_2).append($('<div />').append(table));
+                $($.prasi.panel_list_2).append($('<div />').append(table));
                 $('tr:odd').css('background', '#CCCCCC');
             });
 };
 
+$.asipr.AsignaturaProfesorReadREST = function () {
+    // con esta función jQuery hacemos la petición GET que hace el findAll()
+    $.controller.doGet(
+            this.HOST + this.URL,
+            function (json) {
+                $($.asipr.panel_list).empty();
+                $($.asipr.panel_list).append('<h3>Listado de Asignaturas</h3>');
+                var table = $('<table />').addClass('table table-stripped');
 
+                table.append($('<thead />').append($('<tr />').append('<th>nombre</th>', '<th>id</th>', '<th>curso</th>', '<th>ciclo</th>')));
+                var tbody = $('<tbody />');
+                for (var clave in json) {
+                    tbody.append($('<tr />').append('<td>' + json[clave].nombre + '</td>',
+                            '<td>' + json[clave].id + '</td>', '<td>' + json[clave].curso + '</td>', '<td>' + json[clave].ciclo + '</td>'));
+                }
+                table.append(tbody);
 
-
+                $($.asipr.panel_list).append($('<div />').append(table));
+                $('tr:odd').css('background', '#CCCCCC');
+            });
+};
 
 /**
  Función para la gestión de errores y mensajes al usuario
  */
-$.aluasi.error = function (title, msg) {
-    $($.aluasi.panel_erro).empty();
-    $($.aluasi.panel_erro).append('<h3>' + title + '</h3>');
-    $($.aluasi.panel_erro).append('<p>' + msg + '</p>');
+$.asipr.error = function (title, msg) {
+    $($.asipr.panel_erro).empty();
+    $($.asipr.panel_erro).append('<h3>' + title + '</h3>');
+    $($.asipr.panel_erro).append('<p>' + msg + '</p>');
 
     // cargamos el panel con id r_profesor.
-    $.controller.activate($.aluasi.panel_erro);
+    $.controller.activate($.asipr.panel_erro);
+};
+
+$.prasi.error = function (title, msg) {
+    $($.prasi.panel_erro).empty();
+    $($.prasi.panel_erro).append('<h3>' + title + '</h3>');
+    $($.prasi.panel_erro).append('<p>' + msg + '</p>');
+
+    // cargamos el panel con id r_profesor.
+    $.controller.activate($.prasi.panel_erro);
 };

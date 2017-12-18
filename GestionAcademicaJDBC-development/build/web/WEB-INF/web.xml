@@ -13,6 +13,10 @@
         <servlet-class>com.iesvdc.acceso.controller.CrearProfesor</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>CrearAsignatura</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.CrearAsignatura</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CrearAlumno</servlet-name>
         <servlet-class>com.iesvdc.acceso.controller.CrearAlumno</servlet-class>
     </servlet>
@@ -21,16 +25,64 @@
         <servlet-class>com.iesvdc.acceso.controller.LeerAlumno</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>LeerAsignatura</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.LeerAsignatura</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LeerAsignaturaAlumno</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.LeerAsignaturaAlumno</servlet-class>
+    </servlet>
+        <servlet>
+        <servlet-name>LeerAlumnoAsignatura</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.LeerAlumnoAsignatura</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LeerAsignaturaProfesor</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.LeerAsignaturaProfesor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LeerProfesorAsignatura</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.LeerProfesorAsignatura</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LeerProfesor</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.LeerProfesor</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ActualizarAlumno</servlet-name>
         <servlet-class>com.iesvdc.acceso.controller.ActualizarAlumno</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarProfesor</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.ActualizarProfesor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarAsignatura</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.ActualizarAsignatura</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BorrarAlumno</servlet-name>
         <servlet-class>com.iesvdc.acceso.controller.BorrarAlumno</servlet-class>
     </servlet>
-    <servlet-mapping>
+    <servlet>
+        <servlet-name>BorrarAsignatura</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.BorrarAsignatura</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BorrarProfesor</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.BorrarProfesor</servlet-class>
+    </servlet>
+   <servlet-mapping>
         <servlet-name>CrearAlumno</servlet-name>
         <url-pattern>/CrearAlumno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrearProfesor</servlet-name>
+        <url-pattern>/CrearProfesor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrearAsignatura</servlet-name>
+        <url-pattern>/CrearAsignatura</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>jersey-servlet</servlet-name>
@@ -60,6 +112,30 @@
     <servlet-mapping>
         <servlet-name>BorrarAlumno</servlet-name>
         <url-pattern>/BorrarAlumno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LeerAsignatura</servlet-name>
+        <url-pattern>/LeerAsignatura</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarAsignatura</servlet-name>
+        <url-pattern>/ActualizarAsignatura</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BorrarAsignatura</servlet-name>
+        <url-pattern>/BorrarAsignatura</url-pattern>
+    </servlet-mapping>   
+    <servlet-mapping>
+        <servlet-name>LeerProfesor</servlet-name>
+        <url-pattern>/LeerProfesor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarProfesor</servlet-name>
+        <url-pattern>/ActualizarProfesor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BorrarProfesor</servlet-name>
+        <url-pattern>/BorrarProfesor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -16,6 +16,7 @@ $.aluasi = {};
 $.asialu = {};
 // Configuración del HOST y URL del servicio
 $.aluasi.HOST = 'http://localhost:8080';
+$.asialu.HOST = 'http://localhost:8080';
 // $.alumno.URL = '/GA-JPA/webresources/com.iesvdc.acceso.entidades.alumno';
 $.aluasi.URL = '/GestionAcademica/rest/aluasi';
 $.asialu.URL = '/GestionAcademica/rest/asialu';
@@ -34,7 +35,7 @@ $.aluasi.AlumnoAsignaturaReadREST = function () {
                 $($.aluasi.panel_list).append('<h3>Listado de Asignaturas</h3>');
                 var table = $('<table />').addClass('table table-stripped');
 
-                table.append($('<thead />').append($('<tr />').append('<th>id</th>', '<th>nombre</th>', '<th>id</th>', '<th>curso</th>', '<th>ciclo</th>')));
+                table.append($('<thead />').append($('<tr />').append('<th>nombre</th>', '<th>id</th>', '<th>curso</th>', '<th>ciclo</th>')));
                 var tbody = $('<tbody />');
                 for (var clave in json) {
                     tbody.append($('<tr />').append('<td>' + json[clave].nombre + '</td>',
@@ -69,10 +70,6 @@ $.asialu.AsignaturaAlumnoReadREST = function () {
             });
 };
 
-
-
-
-
 /**
  Función para la gestión de errores y mensajes al usuario
  */
@@ -81,6 +78,15 @@ $.aluasi.error = function (title, msg) {
     $($.aluasi.panel_erro).append('<h3>' + title + '</h3>');
     $($.aluasi.panel_erro).append('<p>' + msg + '</p>');
 
-    // cargamos el panel con id r_profesor.
+    // cargamos el panel con id r_alumno.
     $.controller.activate($.aluasi.panel_erro);
+};
+
+$.asialu.error = function (title, msg) {
+    $($.asialu.panel_erro).empty();
+    $($.asialu.panel_erro).append('<h3>' + title + '</h3>');
+    $($.asialu.panel_erro).append('<p>' + msg + '</p>');
+
+    // cargamos el panel con id r_alumno.
+    $.controller.activate($.asialu.panel_erro);
 };
