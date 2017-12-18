@@ -9,6 +9,10 @@
         <url-pattern>/rest/*</url-pattern>
     </filter-mapping>
     <servlet>
+        <servlet-name>CrearProfesor</servlet-name>
+        <servlet-class>com.iesvdc.acceso.controller.CrearProfesor</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CrearAlumno</servlet-name>
         <servlet-class>com.iesvdc.acceso.controller.CrearAlumno</servlet-class>
     </servlet>

@@ -37,9 +37,9 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="#!" id="menu_al_pro">Alta</a></li>
-                                <li><a href="#!" id="menu_mo_pro">Modificación</a></li>
-                                <li><a href="#!" id="menu_li_pro">Listado</a></li>
-                                <li><a href="#!" id="menu_bo_pro">Borrado</a></li>
+                                <li><a href="#!" id="menu_mo_pro" onclick="$.profesor.ProfesorUpdateREST();">Modificación</a></li>
+                                <li><a href="#!" id="menu_li_pro" onclick="$.profesor.ProfesorReadREST();">Listado</a></li>
+                                <li><a href="#!" id="menu_bo_pro" onclick="$.profesor.ProfesorDeleteREST();">Borrado</a></li>
                             </ul>
                         </div>
                     </li>
@@ -158,7 +158,20 @@
             
             <!-- GESTION ASIGNATURAS -->
             <div id="panel_al_asig" class="panel" hidden>
-                Formulario para añadir/editar una asignatura
+                <h3>Create Asignatura</h3>
+                <div class="input">
+                    <form>
+                        <div class="input">
+                            <input type="text" id="c_al_nombre" class="input-field" placeholder="Nombre del Alumno" >
+                        </div>
+                        <div class="input">
+                            <input type="text" id="c_al_apellidos" class="input-field" placeholder="Apellidos del Alumno"  >
+                        </div>
+                        <div class="input">
+                            <div class="btn" onclick="$.asignatura.AsignaturaCreateREST()">Enviar!</div>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div id="panel_pro_asig" class="panel" hidden>
                 Maestro/detalle asignaturas/profesor
