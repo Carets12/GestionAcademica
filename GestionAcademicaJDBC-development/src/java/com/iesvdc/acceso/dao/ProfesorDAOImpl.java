@@ -37,7 +37,7 @@ public class ProfesorDAOImpl implements ProfesorDAO {
         try {
             if (al.getApellido().length() >= 3 && al.getNombre().length() > 1) {
                 Connection con = obtenerConexion();
-                PreparedStatement pstm = con.prepareStatement("INSERT INTO ALUMNO VALUES(NULL, ?,?)");
+                PreparedStatement pstm = con.prepareStatement("INSERT INTO PROFESOR VALUES(NULL, ?,?)");
                 pstm.setString(1, al.getNombre());
                 pstm.setString(2, al.getApellido());
                 pstm.execute();
@@ -59,7 +59,7 @@ public class ProfesorDAOImpl implements ProfesorDAO {
     public void update(Integer old_id, Profesor new_pr) throws DAOException {
         try {
             Connection con = obtenerConexion();
-            PreparedStatement pstm = con.prepareStatement(" UPDATE ALUMNO SET id=?, nombre=?, apellido=? WHERE id=?");
+            PreparedStatement pstm = con.prepareStatement(" UPDATE PROFESOR SET id=?, nombre=?, apellido=? WHERE id=?");
             pstm.setInt(4, old_id);
             pstm.setInt(1, new_pr.getId());
             pstm.setString(2, new_pr.getNombre());
@@ -75,7 +75,7 @@ public class ProfesorDAOImpl implements ProfesorDAO {
     public void delete(Integer id) throws DAOException {
         try {
             Connection con = obtenerConexion();
-            PreparedStatement pstm = con.prepareStatement("DELETE FROM ALUMNO WHERE id=?");
+            PreparedStatement pstm = con.prepareStatement("DELETE FROM PROFESOR WHERE id=?");
             pstm.setInt(1, id);
             pstm.execute();
             con.close();
@@ -94,7 +94,7 @@ public class ProfesorDAOImpl implements ProfesorDAO {
         Profesor pr;
         try {
             Connection con = obtenerConexion();
-            PreparedStatement pstm = con.prepareStatement("SELECT * FROM ALUMNO WHERE id=?");
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM PROFESOR WHERE id=?");
             pstm.setInt(1, Id);
             ResultSet rs = pstm.executeQuery();
             rs.next();
@@ -113,7 +113,7 @@ public class ProfesorDAOImpl implements ProfesorDAO {
         List<Profesor> list_pr = new ArrayList<>();
         try {
             Connection con = obtenerConexion();
-            PreparedStatement pstm = con.prepareStatement("SELECT * FROM ALUMNO WHERE nombre=?");
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM PROFESOR WHERE nombre=?");
             pstm.setString(1, nombre);
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {
@@ -133,7 +133,7 @@ public class ProfesorDAOImpl implements ProfesorDAO {
         List<Profesor> list_pr = new ArrayList<>();
         try {
             Connection con = obtenerConexion();
-            PreparedStatement pstm = con.prepareStatement("SELECT * FROM ALUMNO WHERE apellido=?");
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM PROFESOR WHERE apellido=?");
             pstm.setString(1, apellido);
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {
@@ -154,7 +154,7 @@ public class ProfesorDAOImpl implements ProfesorDAO {
         try {
             Connection con = obtenerConexion();
             PreparedStatement pstm = con.prepareStatement(
-                    "SELECT * FROM ALUMNO WHERE nombre=? AND apellido=?");
+                    "SELECT * FROM PROFESOR WHERE nombre=? AND apellido=?");
             pstm.setString(1, nombre);
             pstm.setString(2, apellido);
             ResultSet rs = pstm.executeQuery();
@@ -175,7 +175,7 @@ public class ProfesorDAOImpl implements ProfesorDAO {
         List<Profesor> list_pr = new ArrayList<>();
         try {
             Connection con = obtenerConexion();
-            PreparedStatement pstm = con.prepareStatement("SELECT * FROM ALUMNO");
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM PROFESOR");
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {
                 pr = new Profesor(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido"));
